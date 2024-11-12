@@ -28,6 +28,9 @@ services:
   gateway:
     image: smvlad/kittygram_gateway
     env_file: .env
+    depends_on:
+      - backend
+      - frontend
     volumes:
       - static:/static
       - media:/app/media
