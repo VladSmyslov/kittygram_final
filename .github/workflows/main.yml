@@ -96,7 +96,7 @@ jobs:
         with:
           context: ./frontend/
           push: true
-          tags: smvlad/taski_frontend:latest
+          tags: smvlad/kittygram_frontend:latest
 
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
@@ -114,6 +114,6 @@ jobs:
       - name: Push to DockerHub
         uses: docker/build-push-action@v4
         with:
-          context: ./gateway/
+          context: ./nginx/
           push: true
-          tags: smvlad/taski_gateway:latest
+          tags: smvlad/kittygram_gateway:latest
