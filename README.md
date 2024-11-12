@@ -56,6 +56,16 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
+### Как заполнить .env:
+
+Установите модуль python-dotenv с помощью pip.
+
+Создайте файл .env с соответствующей конфигурацией вашего проекта.
+
+Добавьте его в файл .gitignore, чтобы git не закоммитил его.
+
+Загрузите конфигурацию в файлы Python с помощью модуля Python-dotenv.
+
 ## Как проверить работу с помощью автотестов
 
 В корне репозитория создайте файл tests.yml со следующим содержимым:
@@ -76,6 +86,16 @@ dockerhub_username: ваш_логин_на_докерхабе
 - Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
 - Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
 - В корне проекта есть файл `kittygram_workflow.yml`.
+
+## Стек используемых технологий
+
+- Django.
+- Django REST Framework.
+- PostgreSQL.
+- Docker и Docker-compose.
+- Git.
+- GitHub Actions.
+- Flake8.
 
 ## Автор
 
