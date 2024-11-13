@@ -1,10 +1,17 @@
-#  Как работать с репозиторием финального задания
+#  Django-проект Kittygram: управление котиками.
 
-## Что нужно сделать
+https://github.com/VladSmyslov/kittygram_final/actions/workflows/main.yml/badge.svg
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+##  Описание проекта
+
+Kittygram — социальная сеть для обмена фотографиями любимых питомцев. Это полностью рабочий проект, который состоит из бэкенд-приложения на Django и фронтенд-приложения на React.
+
+##  Как работать с репозиторием финального задания
+
 
 ### Как запустить проект:
+
+Установить Docker
 
 Клонировать репозиторий и перейти в него в командной строке:
 
@@ -12,55 +19,46 @@
 git clone https://github.com/yandex-praktikum/kittygram_backend.git
 ```
 
-```
-cd kittygram_backend
-```
-
-Cоздать и активировать виртуальное окружение:
-
-```
-python3 -m venv env
-```
-
-* Если у вас Linux/macOS
-
-    ```
-    source env/bin/activate
-    ```
-
-* Если у вас windows
-
-    ```
-    source env/scripts/activate
-    ```
-
-```
-python3 -m pip install --upgrade pip
-```
-
-Установить зависимости из файла requirements.txt:
-
-```
-pip install -r requirements.txt
-```
-
-Выполнить миграции:
-
-```
-python3 manage.py migrate
-```
-
 Запустить проект:
 
 ```
-python3 manage.py runserver
+docker compose up
+```
+Выполнить миграции:
+
+```
+docker compose exec backend python manage.py migrate
 ```
 
 ### Как заполнить .env:
 
 Установите модуль python-dotenv с помощью pip.
 
-Создайте файл .env с соответствующей конфигурацией вашего проекта.
+Создайте файл .env со следующими переменными:
+```
+POSTGRES_USER - имя пользователя БД.
+```
+```
+POSTGRES_PASSWORD - пароль пользователя БД.
+```
+```
+POSTGRES_DB - название базы данных.
+```
+```
+DB_HOST - адрес, по которому Django будет соединяться с базой данных.
+```
+```
+DB_PORT - порт, по которому Django будет обращаться к базе данных. 5432 — это порт по умолчанию для PostgreSQL.
+```
+```
+SECRET_KEY - секретный ключ
+```
+```
+DEBUG - режим отладки
+```
+```
+ALLOWED_HOSTS - список имен хостов / доменов, на которых может обслуживаться ваш веб-сервер.
+```
 
 Добавьте его в файл .gitignore, чтобы git не закоммитил его.
 
