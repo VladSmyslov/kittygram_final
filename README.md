@@ -1,6 +1,6 @@
 #  Django-проект Kittygram: управление котиками.
 
-https://github.com/VladSmyslov/kittygram_final/actions/workflows/main.yml/badge.svg
+![]https://github.com/VladSmyslov/kittygram_final/actions/workflows/main.yml/badge.svg
 
 ##  Описание проекта
 
